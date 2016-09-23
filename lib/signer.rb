@@ -159,7 +159,7 @@ class Signer
     issuer_name_node.content = cert.issuer.to_s[1..-1].gsub(/\//, ',')
 
     issuer_number_node = Nokogiri::XML::Node.new('ds:X509SerialNumber', document)
-    issuer_number_node.content = cert.serial
+    issuer_number_node.content = cert.serial.to_i
 
 #    issuer_serial_node = Nokogiri::XML::Node.new('X509IssuerSerial', document)
 #    issuer_serial_node.add_child(issuer_name_node)
